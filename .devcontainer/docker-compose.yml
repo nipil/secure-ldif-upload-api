@@ -1,0 +1,37 @@
+services:
+
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces/project
+      # copie la clé SSH et la configuration côté client
+      - ../examples/id_rsa:/root/.ssh/id_rsa:ro
+      - ../examples/config:/root/.ssh/config:ro
+
+    # utilise un TTY afin que l'idle loop puisse s'exécuter
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/sh -c "while sleep 1000; do :; done"
+
+    depends_on:
+      - sftp
+
+  sftp:
+    # serveur SSH en mode SFTP-only
+    image: atmoz/sftp
+    restart: always
+
+    volumes:
+      # copie la clé SSH côté partenaire
+      - ../examples/id_rsa.pub:/home/qux/.ssh/keys/id_rsa.pub:ro
+
+    # qux : utilisateur sftp côté partenaire
+    #   --> référencé dans la config SSH du host
+    #       app_config.tenants.X.ssh_config_host
+    #
+    # my_uploads: dossier cible de cet utilisateur côté partenaire
+    #   --> référencé dans la configuration
+    #       app_config.tenants.X.sftp_target_directory
+    command: qux:pass:1001:100:my_uploads

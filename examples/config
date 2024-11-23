@@ -1,0 +1,5 @@
+Host bar  # référencé dans app_config.tenant.ssh_config_host
+    HostName sftp
+    StrictHostKeyChecking false
+    User qux
+    # Si pas d'identité renseignée, utilise l'identité par défaut DEFAULT_SSH_SECRET_ID_PATH
