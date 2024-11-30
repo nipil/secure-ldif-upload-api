@@ -261,7 +261,7 @@ def send_sftp(encrypted: bytes, signature: bytes, force: bool, *, host: str, fol
             conflict = targets.intersection(existing)
             if len(conflict) > 0 and not force:
                 raise Locked(f'Fichiers en conflit sur la cible : {", ".join(conflict)}')
-            for present in existing:
+            for present in conflict:
                 sftp_unlink(sftp, present)
             sftp_write_file(sftp, signature, tmp_file)
             sftp_rename_temp(sftp, tmp_file, sig_file)
