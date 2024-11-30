@@ -9,16 +9,30 @@ Qu'est-ce que c'est ?
 
 ## Dépendances
 
-Uses Debian 12 system packages only, with versions :
+Uses Debian system packages only.
+
+For Bookworm (Debian 12) :
 
 - Python - [doc 3.11](https://docs.python.org/fr/3.11/index.html)
     - Flask = micro web framework - [doc 2.2](https://devdocs.io/flask~2.2/)
-        - Flask HTTPAuth = bearer token - [doc stable](https://flask-httpauth.readthedocs.io/en/stable/)
+        - Flask HTTPAuth = bearer token - 4.5 - [doc stable](https://flask-httpauth.readthedocs.io/en/stable/)
     - magic = identification type mime - [doc 0.4.26](https://github.com/ahupp/python-magic/tree/0.4.26)
     - LDAP = manipulation LDIF - [doc 3.4.3](https://www.python-ldap.org/en/python-ldap-3.4.3/)
     - GnuPG = chiffrement et signature - [doc 0.4.9](https://gnupg.readthedocs.io/en/0.4.9/)
     - Paramiko = ssh/sftp library - [doc 2.12](https://docs.paramiko.org/en/2.12/)
     - pydantic = data validation - [doc 1.10](https://docs.pydantic.dev/1.10/)
+
+For Trixie (Debian 13) :
+
+- Python - [doc 3.12](https://docs.python.org/fr/3.12/index.html)
+    - Flask = micro web framework - [doc 3.1](https://flask.palletsprojects.com/en/stable/)
+        - Flask HTTPAuth = bearer token - 4.8 - [doc stable](https://flask-httpauth.readthedocs.io/en/stable/)
+    - magic = identification type mime - [doc 0.4.27](https://github.com/ahupp/python-magic/tree/0.4.27)
+    - LDAP = manipulation LDIF - [doc 3.4.4](https://www.python-ldap.org/en/python-ldap-3.4.4/)
+    - GnuPG = chiffrement et signature - [doc 0.5.2](https://gnupg.readthedocs.io/en/0.5.2/)
+    - Paramiko = ssh/sftp library - [doc 3.4.1](https://docs.paramiko.org/en/3.4/)
+    - pydantic = data validation - [doc 2.9.2](https://docs.pydantic.dev/2.9/)
+
 
 ## Configuration
 
