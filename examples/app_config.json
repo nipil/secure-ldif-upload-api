@@ -1,0 +1,18 @@
+{
+  "log_level": "info",
+  "max_upload_size": 2000000,
+  "tenants": {
+    "foo": {
+      "bearer_tokens": [
+        "letmein"
+      ],
+      "gpg_encryption_fingerprint": "myself",
+      "gpg_signature_fingerprint": "myself",
+      "ssh_config_host": "bar",
+      "sftp_target_directory": "my_uploads",
+      "sftp_target_temporary_filename": "example.tmp",
+      "sftp_target_gpg_filename": "example.gpg",
+      "sftp_target_detached_signature_filename": "example.gpg.sig"
+    }
+  }
+}
